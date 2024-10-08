@@ -41,7 +41,7 @@ string.prototype.replace = function (pattern, replacement) {
     let str = this;
     let search_start_idx = 1;
 
-    let idx = map_tuple(str.find(pattern, search_start_idx, true));
+    let idx = pack2(str.find(pattern, search_start_idx, true));
     if (!idx[1]) return str;
     let postfix = str.sub(idx[2] + 1);
     str = `${str.sub(1, (idx[1] - 1))}${replacement}${postfix}`;
@@ -54,7 +54,7 @@ string.prototype.replace_all = function (pattern, replacement) {
     let search_start_idx = 1;
 
     while (true) {
-        let idx = map_tuple(str.find(pattern, search_start_idx, true));
+        let idx = pack2(str.find(pattern, search_start_idx, true));
         if (!idx[1]) break;
         let postfix = str.sub(idx[2] + 1);
         str = `${str.sub(1, (idx[1] - 1))}${replacement}${postfix}`;

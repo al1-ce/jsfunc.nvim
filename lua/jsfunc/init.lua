@@ -54,7 +54,7 @@ end
 function string:replace(pattern, replacement)
     local str = self
     local search_start_idx = 1
-    local idx = map_tuple(str:find(pattern, search_start_idx, true))
+    local idx = pack2(str:find(pattern, search_start_idx, true))
     if not idx[1] then
         return str
     end
@@ -66,7 +66,7 @@ function string:replace_all(pattern, replacement)
     local str = self
     local search_start_idx = 1
     while true do
-        local idx = map_tuple(str:find(pattern, search_start_idx, true))
+        local idx = pack2(str:find(pattern, search_start_idx, true))
         if not idx[1] then
             break
         end
