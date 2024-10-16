@@ -10,6 +10,7 @@ build:
     do
         echo "--- Compiling $line.js ---"
         js2lua \
+            --no-debug \
             --no-tagArrayExpression \
             --no-index0to1 \
             "src/$line.js" > "lua/jsfunc/$line.lua"

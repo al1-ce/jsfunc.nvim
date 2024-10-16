@@ -50,7 +50,7 @@ string.prototype.replace = function (pattern, replacement) {
 }
 
 string.prototype.replace_all = function (pattern, replacement) {
-    return this.gsub(pattern, replacement)
+    return this.gsub(pattern, replacement);
 }
 
 string.prototype.insert = function (pos, text) {
