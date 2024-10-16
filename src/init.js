@@ -50,19 +50,7 @@ string.prototype.replace = function (pattern, replacement) {
 }
 
 string.prototype.replace_all = function (pattern, replacement) {
-    let str = this;
-    let search_start_idx = 1;
-
-    while (true) {
-        let idx = pack2(str.find(pattern, search_start_idx, true));
-        if (!idx[1]) break;
-        let postfix = str.sub(idx[2] + 1);
-        str = `${str.sub(1, (idx[1] - 1))}${replacement}${postfix}`;
-
-        search_start_idx = -1 * postfix.len();
-    }
-
-    return str;
+    return this.gsub(pattern, replacement)
 }
 
 string.prototype.insert = function (pos, text) {
